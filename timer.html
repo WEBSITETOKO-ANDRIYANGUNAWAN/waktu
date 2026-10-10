@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>TimerStop V5 — Antrean Suara 10 Timer</title>
+  <link rel="stylesheet" href="timer.css">
+  <script src="timer.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="TimerStop beranda">
+        <span class="brand-mark">⏱</span>
+        <span><strong>TimerStop</strong><small>10 TIMERS • VOICE QUEUE</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="status-pill"><span class="status-dot"></span> 10 timer siap</span>
+        <button id="stopAllBtn" class="btn btn-danger btn-small" type="button">■ Hentikan semua alarm</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">PANEL KONTROL RENTAL PLAYSTATION</p>
+      <h1>Kelola 10 meja, <span>lebih mudah.</span></h1>
+      <p class="hero-copy">Setiap meja punya timer sendiri. Jalankan beberapa timer bersamaan untuk PS 3 dan PS 4, dengan pengumuman suara saat waktu habis.</p>
+      <div class="hero-stats">
+        <div><strong id="runningCount">0</strong><span>Berjalan</span></div>
+        <div><strong id="overtimeCount">0</strong><span>Waktu habis</span></div>
+        <div><strong id="idleCount">10</strong><span>Siap digunakan</span></div>
+      </div>
+    </section>
+
+    <section class="global-panel">
+      <div class="global-copy">
+        <span class="voice-icon">🔊</span>
+        <div><strong>Pengaturan suara global</strong><p>Atur volume untuk pengumuman semua meja. Klik tes suara sebelum mulai.</p></div>
+      </div>
+      <label class="volume-control" for="volumeRange">
+        <span>Volume suara</span><strong id="volumeValue">100%</strong>
+        <input id="volumeRange" type="range" min="10" max="100" value="100" step="5">
+      </label>
+      <div class="global-buttons">
+        <button id="testVoiceBtn" class="btn btn-secondary" type="button">▶ Tes suara</button>
+        <button id="stopVoiceBtn" class="btn btn-ghost" type="button">■ Hentikan suara</button>
+      </div>
+      <p class="hint">Suara memakai fitur text-to-speech browser; kualitas suara Indonesia bergantung pada perangkat. Besarkan juga volume speaker komputer.</p>
+    </section>
+
+    <section class="section-heading">
+      <div><p class="eyebrow">DASHBOARD MEJA</p><h2>10 timer independen</h2></div>
+      <p>Timer tiap meja dapat dimulai, dijeda, dilanjutkan, dan diatur ulang secara terpisah.</p>
+    </section>
+
+    <section id="timerGrid" class="timer-grid" aria-label="Daftar 10 timer meja"></section>
+
+    <footer class="footer">
+      <p>TimerStop V4 • 10 timer berjalan secara independen.</p>
+      <p class="footer-note">Biarkan halaman tetap terbuka. Browser dapat membatasi suara jika tab ditutup atau perangkat masuk mode tidur.</p>
+    </footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
